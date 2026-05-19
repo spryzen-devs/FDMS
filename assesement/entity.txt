@@ -1,0 +1,11 @@
+Entities:
+1.user
+2.restaurant
+3.fooditem
+4.order
+5.orderitem
+6.deliveryassignment
+7.deliveryperformance
+
+
+user -> manages -> restaurant
