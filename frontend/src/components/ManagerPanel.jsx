@@ -68,7 +68,7 @@ export default function ManagerPanel({
                   <tr><td><strong>Rating:</strong></td><td>{myRestaurant.rating} / 5.0</td></tr>
                   <tr>
                     <td><strong>Prep Delays Count:</strong></td>
-                    <td style={{ color: myRestaurant.delayCount > 0 ? '#c0392b' : '#333333', fontWeight: 'bold' }}>
+                    <td style={{ fontWeight: 'bold' }}>
                       {myRestaurant.delayCount} violations
                     </td>
                   </tr>
@@ -165,9 +165,9 @@ export default function ManagerPanel({
                       <td>{rec.agentName}</td>
                       <td>{rec.rating} / 5.0</td>
                       <td>{rec.distance.toFixed(1)} units</td>
-                      <td style={{ fontWeight: 'bold', color: '#27ae60' }}>{rec.score.toFixed(1)}</td>
+                      <td style={{ fontWeight: 'bold' }}>{rec.score.toFixed(1)}</td>
                       <td>
-                        <button className="btn btn-success" onClick={() => assignAgent(rec.agentId)}>Assign Agent</button>
+                        <button className="btn" onClick={() => assignAgent(rec.agentId)}>Assign Agent</button>
                       </td>
                     </tr>
                   ))}

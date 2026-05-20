@@ -117,13 +117,7 @@ export default function CustomerPanel({
                   <td>{o.restaurantName}</td>
                   <td>${o.totalAmount}</td>
                   <td>
-                    <span style={{ 
-                      fontWeight: 'bold', 
-                      padding: '3px 8px', 
-                      borderRadius: '3px',
-                      backgroundColor: o.orderStatus === 'DELIVERED' ? '#d4edda' : '#fff3cd',
-                      color: o.orderStatus === 'DELIVERED' ? '#155724' : '#856404'
-                    }}>{o.orderStatus}</span>
+                    <span style={{ fontWeight: 'bold' }}>{o.orderStatus}</span>
                   </td>
                   <td>{o.deliveryAddress}</td>
                   <td>({o.deliveryX}, {o.deliveryY})</td>
@@ -131,9 +125,9 @@ export default function CustomerPanel({
                   <td>
                     {o.orderStatus === 'DELIVERED' && assignment && (
                       !assignment.customerConfirmed ? (
-                        <button className="btn btn-success" onClick={() => customerConfirmAndRate(assignment.id)}>Confirm & Rate</button>
+                        <button className="btn" onClick={() => customerConfirmAndRate(assignment.id)}>Confirm & Rate</button>
                       ) : (
-                        <span style={{ color: '#27ae60', fontWeight: 'bold' }}>Confirmed ({assignment.deliveryRating} Stars)</span>
+                        <span style={{ fontWeight: 'bold' }}>Confirmed ({assignment.deliveryRating} Stars)</span>
                       )
                     )}
                   </td>

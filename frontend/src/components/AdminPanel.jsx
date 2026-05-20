@@ -6,11 +6,11 @@ export default function AdminPanel({ reports, users }) {
           <h2>{reports.averageTime.toFixed(1)} mins</h2>
           <p>Average Delivery Time</p>
         </div>
-        <div className="report-summary-box" style={{ backgroundColor: '#27ae60' }}>
+        <div className="report-summary-box">
           <h2>{reports.topAgents.length}</h2>
           <p>Top Agents List Count</p>
         </div>
-        <div className="report-summary-box" style={{ backgroundColor: '#c0392b' }}>
+        <div className="report-summary-box">
           <h2>{reports.delayedDeliveries.length}</h2>
           <p>Delayed Orders Triggers</p>
         </div>
@@ -66,7 +66,7 @@ export default function AdminPanel({ reports, users }) {
               <td>{a.currentRating.toFixed(1)} / 5.0</td>
               <td>{a.completedDeliveriesCount}</td>
               <td>{a.onTimeDeliveriesCount}</td>
-              <td style={{ color: '#27ae60', fontWeight: 'bold' }}>{a.onTimeRate.toFixed(1)}%</td>
+              <td style={{ fontWeight: 'bold' }}>{a.onTimeRate.toFixed(1)}%</td>
             </tr>
           ))}
         </tbody>
@@ -92,7 +92,7 @@ export default function AdminPanel({ reports, users }) {
               <td>{d.agentName}</td>
               <td>{d.estimatedMinutes} mins</td>
               <td>{d.actualMinutes} mins</td>
-              <td style={{ color: '#c0392b', fontWeight: 'bold' }}>{d.delayMinutes} mins Late</td>
+              <td style={{ fontWeight: 'bold' }}>{d.delayMinutes} mins Late</td>
             </tr>
           ))}
         </tbody>

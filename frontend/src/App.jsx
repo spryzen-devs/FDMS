@@ -94,15 +94,7 @@ function App() {
   }, []);
 
   const triggerAlert = (success, message) => {
-    if (success) {
-      setSuccessMsg(message);
-      setErrorMsg('');
-      setTimeout(() => setSuccessMsg(''), 5000);
-    } else {
-      setErrorMsg(message);
-      setSuccessMsg('');
-      setTimeout(() => setErrorMsg(''), 7000);
-    }
+    alert(message);
   };
 
   const handleLogin = (e) => {
@@ -409,18 +401,14 @@ function App() {
     <div className="app-container">
       <div className="header">
         <h1>FOOD DELIVERY MANAGEMENT SYSTEM</h1>
-        <p>Mini Project Assignment Service layer -- Logged role-based views</p>
-        
-        {currentUser && (
-          <div style={{ marginTop: '15px', backgroundColor: '#eef2f3', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}>
-            <strong>Welcome: </strong> {currentUser.name} | <strong>Role: </strong> {currentUser.role} | <strong>Coordinates: </strong> ({currentUser.x}, {currentUser.y})
-            <button className="btn btn-danger" style={{ marginLeft: '20px', padding: '4px 10px' }} onClick={handleLogout}>Log Out</button>
-          </div>
-        )}
       </div>
 
-      {successMsg && <div className="alert alert-success">{successMsg}</div>}
-      {errorMsg && <div className="alert alert-error">Error: {errorMsg}</div>}
+      {currentUser && (
+        <div style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ccc', fontSize: '14px' }}>
+          <strong>Welcome: </strong> {currentUser.name} | <strong>Role: </strong> {currentUser.role} | <strong>Coordinates: </strong> ({currentUser.x}, {currentUser.y})
+          <button className="btn" style={{ marginLeft: '20px', padding: '2px 8px' }} onClick={handleLogout}>Log Out</button>
+        </div>
+      )}
 
       {!currentUser && (
         <AuthPanel
@@ -490,9 +478,6 @@ function App() {
         />
       )}
 
-      <div style={{ marginTop: '30px', textAlign: 'center', fontSize: '12px', color: '#888888', borderTop: '1px solid #eeeeee', paddingTop: '15px' }}>
-        &copy; 2026 Food Delivery Management System Project -- Computer Science Engineering Dept.
-      </div>
     </div>
   );
 }

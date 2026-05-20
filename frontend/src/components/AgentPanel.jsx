@@ -27,14 +27,14 @@ export default function AgentPanel({
                 <td>{a.assignedAt}</td>
                 <td>{a.pickedUpAt || "Pending Pickup"}</td>
                 <td>
-                  <span style={{ fontWeight: 'bold', color: '#d35400' }}>{a.deliveryStatus}</span>
+                  <span style={{ fontWeight: 'bold' }}>{a.deliveryStatus}</span>
                 </td>
                 <td>
                   {a.deliveryStatus === 'ASSIGNED' && (
-                    <button className="btn btn-warning" onClick={() => pickupOrder(a.id)}>Confirm Order Pickup</button>
+                    <button className="btn" onClick={() => pickupOrder(a.id)}>Confirm Order Pickup</button>
                   )}
                   {a.deliveryStatus === 'PICKED_UP' && (
-                    <button className="btn btn-success" onClick={() => deliverOrder(a.id)}>Confirm Delivered</button>
+                    <button className="btn" onClick={() => deliverOrder(a.id)}>Confirm Delivered</button>
                   )}
                 </td>
               </tr>
